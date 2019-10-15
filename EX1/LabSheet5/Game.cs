@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace LabSheet5
 {
-    class Game
+    class Game 
     {
-        public string Name { get; set; }
+
+        private readonly string _name;
+        public  string Name { get;  set; }
 
         public decimal Price { get; set; }
 
