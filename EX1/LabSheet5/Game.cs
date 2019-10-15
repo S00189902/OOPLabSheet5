@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LabSheet5
 {
-    class Game 
+   public abstract class Game 
     {
 
         private readonly string _name;
         public  string Name { get;  set; }
 
-        public decimal Price { get; set; }
+        protected  decimal Price { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 
@@ -39,8 +39,12 @@ namespace LabSheet5
 
           public override string ToString()
         {
-            return string.Format($"{Name} will be released on {ReleaseDate} and is selling for {Price}");
+            return string.Format($"{Name} will be released on {ReleaseDate.ToShortDateString()} and is selling for {Price}");
 
+        }
+        public virtual void UpdatePrice(decimal percentageIncrease)
+        {
+            Price *= (1 + percentageIncrease);
         }
     }
 }
