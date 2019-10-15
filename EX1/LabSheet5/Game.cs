@@ -42,9 +42,7 @@ namespace LabSheet5
             return string.Format($"{Name} will be released on {ReleaseDate.ToShortDateString()} and is selling for {Price}");
 
         }
-        public virtual void UpdatePrice(decimal percentageIncrease)
-        {
-            Price *= (1 + percentageIncrease);
-        }
+        public abstract void UpdatePrice(decimal percentageIncrease);
+        
     }
 }
